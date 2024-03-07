@@ -60,5 +60,9 @@
     define ('DB_USER'    , '__REMOTO__');
     define ('DB_PASS'    , '__REMOTO__');
     define ('DB_CHARSET' , 'utf8');
-    
+
+    //EL CONTROLADOR POR DEFECTO // MÉTODO POR DEFECTO / Y EL CONTROLADOR DE ERRORES POR DEFECTO
+    define('DEFAULT_CONTROLLER'      , 'home');
+    define('DEFAULT_ERROR_CONTROLLER', 'error');
+    define('DEFAULT_METHOD'          , 'index');
     
