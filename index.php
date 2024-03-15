@@ -5,7 +5,6 @@
     //Requerimos el archivo de la clase del framework
     require_once 'app/classes/Nasemi.php';
 
-    $nasemi = new Nasemi;
-
-
-?>
+    //Ejecutamos el framework
+    Nasemi::iniciar();
+    

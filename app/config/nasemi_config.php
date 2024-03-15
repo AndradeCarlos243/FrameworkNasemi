@@ -28,6 +28,7 @@
     define ('CONTROLLERS', APP.'controllers'.DS);
     define ('FUNCTIONS'  , APP.'functions'.DS);
     define ('MODELS'     , APP.'models'.DS);
+    define ('LOCALCALL'  , '.'.DS);
     
     define ('TEMPLATES'  , ROOT.'templates'.DS);
     define ('INCLUDES'   , TEMPLATES.'includes'.DS);
@@ -35,10 +36,10 @@
     define ('VIEWS'      , TEMPLATES.'views'.DS);
 
     //RUTAS DE LOS RECUSOS CON LA URL BASE
-    define('ASSETS'      , URL.'assets'.DS);
+    define('ASSETS'      , LOCALCALL.'assets'.DS);
     define ('CSS'        , ASSETS.'css'.DS);
     define ('FAVICON'    , ASSETS.'favicon'.DS);
-    define ('FONTS'      , ASSETS.'fonts/'.DS);
+    define ('FONTS'      , ASSETS.'fonts'.DS);
     define ('IMAGES'     , ASSETS.'images'.DS);
     define ('JS'         , ASSETS.'js'.DS);
     define ('PLUGINS'    , ASSETS.'plugins'.DS);

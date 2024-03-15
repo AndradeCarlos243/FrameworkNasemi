@@ -16,7 +16,8 @@
          * Método que inicializa cada método de manera subsecuente
          * @return void
          */
-        private function init(){
+        private function init()
+        {
             $this->init_session();
             $this->init_load_config();
             $this->init_load_functions();
@@ -31,7 +32,7 @@
          */
         private function init_session()
         {
-            if(!session_start())
+            if(session_status() === PHP_SESSION_NONE)
             {
                 session_start();
             }
@@ -85,8 +86,7 @@
             }
             return;
         }
-
-        
+  
         /**
          * Método para el autoload de todos los archivos
          * 
@@ -94,11 +94,14 @@
          */
         private function init_autoload()
         {
-            require_once CLASSES.'Database.php';
-            require_once CLASSES.'Model.php';
-            require_once CLASSES.'Controller.php';
-            require_once CONTROLLERS.DEFAULT_CONTROLLER.'Controller.php';
-            require_once CONTROLLERS.DEFAULT_ERROR_CONTROLLER.'Controller.php';
+            // require_once CLASSES.'Database.php';
+            // require_once CLASSES.'Model.php';
+            // require_once CLASSES.'Controller.php';
+            // require_once CLASSES.'View.php';
+            require_once CLASSES.'Autoloader.php';
+            // require_once CONTROLLERS.DEFAULT_CONTROLLER.'Controller.php';
+            // require_once CONTROLLERS.DEFAULT_ERROR_CONTROLLER.'Controller.php';
+            Autoloader::init();
 
             return;
         }
@@ -108,7 +111,8 @@
          * 
          * @return void
          */
-        private function filter_url(){
+        private function filter_url()
+        {
             if(isset($_GET['uri'])){
                 $this->uri = $_GET['uri'];
                 $this->uri = rtrim($this->uri, '/');
@@ -124,7 +128,8 @@
          * 
          * @return void
          */
-        private function dispatch(){
+        private function dispatch()
+        {
             //Filtrar la URL y separar la URI
             $this->filter_url();
 
@@ -147,6 +152,7 @@
             $controller = $current_controller.'Controller';
             if(!class_exists($controller)){
                 $controller = DEFAULT_ERROR_CONTROLLER.'Controller';
+                $current_controller = DEFAULT_ERROR_CONTROLLER;
             }
 
             //////////////////////////////MÉTODO///////////////////////////////////
@@ -166,17 +172,33 @@
             
             unset($this->uri[1]);
             
+
+            //CREANDO CONSTANTES PARA UTILIZAR MÁS ADELANTE
+            define('CONTROLLER', $current_controller);
+
             //////////////////////////////EJECUCIÓN///////////////////////////////////
             //EJECUTANDO CONTROL Y MÉTODO SEGÚN LA PETICIÓN
             $controller = new $controller;
             $params = array_values(empty($this->uri) ? [] : $this->uri);
-
             if(empty($params)){
+                $current_method = DEFAULT_METHOD;
+                define('METHOD'    , $current_method);
                 call_user_func([$controller, $current_method]);
             }else{
+                define('METHOD'    , $current_method);
                 call_user_func_array([$controller, $current_method], $params);
             }
 
+            return;
+        }
+
+        /**
+         * Inicializa el framework
+         * @return void
+         */
+        public static function iniciar()
+        {
+            $nasemi = new self();
             return;
         }
     }

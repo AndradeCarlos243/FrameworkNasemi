@@ -1,6 +1,13 @@
 <?php
-    class errorController{
+    class errorController
+    {
         function __construct(){
-            echo 'Clase '.__CLASS__;
+        }
+        function index(){
+            $datos = 
+            [
+                'title' => 'Página no encontrada',
+            ];
+            View::render('404', $datos);
         }
     }
