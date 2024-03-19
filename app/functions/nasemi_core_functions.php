@@ -6,9 +6,9 @@
     }
 
     function get_sitename() {
-        return 'Bee framework';
-      }
-      
-      function now() {
-        return date('Y-m-d H:i:s');
-      }
+      return 'Bee framework';
+    }
+    
+    function now() {
+      return date('Y-m-d H:i:s');
+    }

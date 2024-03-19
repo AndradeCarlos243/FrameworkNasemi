@@ -162,6 +162,7 @@
                 //COMPROBAMOS SI EXISTE EL MÉTODO SOLICITADO
                 if(!method_exists($controller, $method)){
                     $controller = DEFAULT_ERROR_CONTROLLER.'Controller';
+                    $current_controller = DEFAULT_ERROR_CONTROLLER;
                     $current_method = DEFAULT_METHOD;
                 }else{
                     $current_method = $method;
@@ -181,7 +182,7 @@
             $controller = new $controller;
             $params = array_values(empty($this->uri) ? [] : $this->uri);
             if(empty($params)){
-                $current_method = DEFAULT_METHOD;
+                // $current_method = DEFAULT_METHOD;
                 define('METHOD'    , $current_method);
                 call_user_func([$controller, $current_method]);
             }else{

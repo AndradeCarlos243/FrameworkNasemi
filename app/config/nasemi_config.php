@@ -15,8 +15,8 @@
     define ('AUT_SALT'   , 'nasemi243');
 
     //Puerto del sistema Y url
-    define ('PORT'       ,'3000');
-    define ('URL'        , IS_LOCAL ? 'http://127.0.0.1:'.PORT.BASEPATH : '___URL EN PRODUCCIÓN__');
+    define ('PORT'       ,'8080');
+    define ('URL'        , IS_LOCAL ? 'http://127.0.0.1'.BASEPATH : '___URL EN PRODUCCIÓN__');
 
     //Las rutas de nuestros directorios y archivos
     define ('DS'         , DIRECTORY_SEPARATOR);
@@ -36,7 +36,7 @@
     define ('VIEWS'      , TEMPLATES.'views'.DS);
 
     //RUTAS DE LOS RECUSOS CON LA URL BASE
-    define('ASSETS'      , LOCALCALL.'assets'.DS);
+    define('ASSETS'      , URL.'assets'.DS);
     define ('CSS'        , ASSETS.'css'.DS);
     define ('FAVICON'    , ASSETS.'favicon'.DS);
     define ('FONTS'      , ASSETS.'fonts'.DS);

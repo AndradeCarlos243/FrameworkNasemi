@@ -7,6 +7,7 @@
             $datos = 
             [
                 'title' => 'Página no encontrada',
+                'bg' => 'dark'
             ];
             View::render('404', $datos);
         }

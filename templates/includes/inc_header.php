@@ -4,7 +4,7 @@
   <base href="">
   <meta charset="UTF-8">
   
-  <title><?php echo isset($d->title) ? $d->title.' - '.get_sitename() : 'Bienvenido - '.get_sitename(); ?></title>
+  <title><?php echo isset($datos->title) ? $datos->title.' - '.get_sitename() : 'Bienvenido - '.get_sitename(); ?></title>
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -29,5 +29,5 @@
   </style>
 </head>
 
-<body class="<?php echo isset($d->bg) && $d->bg === 'dark' ? 'bg-gradient' : 'bg-light' ?>" style="padding: 200px 0px;">
+<body class="<?php echo isset($datos->bg) && $datos->bg === 'dark' ? 'bg-gradient' : 'bg-light' ?>" style="padding: 200px 0px;">
 <!-- ends inc_header.php -->
