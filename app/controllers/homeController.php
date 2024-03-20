@@ -13,9 +13,10 @@
             View::render('bee', $datos);
         }
 
-        function test()
+        function flash()
         {
-            Redirect::to('https://www.joystick.com.mx/roadmap/');
+            Flasher::new('Hola mundo soy una notificación dinámica', 'success');
+            View::render('flash');
         }
 
     }
