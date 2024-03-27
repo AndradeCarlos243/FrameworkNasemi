@@ -47,9 +47,9 @@
 
     //CONSTANTES PARA LA BD
     //Set para la conexion local
-    define('LDB_ENGINE'  , 'mysql');
-    define('LDB_HOST'    , 'localhost');
-    define ('LDB_NAME'   , 'databasename');
+    define ('LDB_ENGINE'  , 'mysql');
+    define ('LDB_HOST'    , 'localhost');
+    define ('LDB_NAME'   , 'nasemi_framework');
     define ('LDB_USER'   , 'root');
     define ('LDB_PASS'   , '2432303');
     define ('LDB_CHARSET', 'utf8');

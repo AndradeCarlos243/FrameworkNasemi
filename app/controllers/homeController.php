@@ -19,4 +19,12 @@
             View::render('flash');
         }
 
+        function test()
+        {
+            $db = new Database();
+            $db->connect();
+            
+            View::render('test');
+        }
+
     }
