@@ -4,6 +4,37 @@
         }
 
         function index(){
+            //Actualizar un usuario
+            try
+            {
+                $user = new usuarioModel();
+                $user->name = "Simón";
+                $user->username = "el gran varón";
+                $user->email = "simon@simon.com";
+                $user->id = 6;
+                print_r($user->update());
+            }
+            catch(Exception $e)
+            {
+                echo $e->getMessage();
+            }
+            die;
+            //Insertar nuevo usuario
+            try
+            {
+                $user = new usuarioModel();
+                $user->name = "Nasemi";
+                $user->username = "nenechi";
+                $user->email = "ejemplo@ejemplo.com";
+                $user->created_at = now();
+                $identificador = $user->add();
+                echo $identificador;
+            }
+            catch(Exception $e)
+            {
+                echo $e->getMessage();
+            }
+            die;
             $datos = 
             [
                 'title' => 'NASEMI',

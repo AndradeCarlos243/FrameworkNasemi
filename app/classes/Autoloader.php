@@ -16,8 +16,8 @@
                 require_once CLASSES.$class.'.php';
             }elseif(is_file(CONTROLLERS.$class.'.php')){
                 require_once CONTROLLERS.$class.'.php';
-            }elseif(is_file(MODELS.$class.'Model.php')){
-                require_once MODELS.$class.'Model.php';
+            }elseif(is_file(MODELS.$class.'.php')){
+                require_once MODELS.$class.'.php';
             }
 
             return;

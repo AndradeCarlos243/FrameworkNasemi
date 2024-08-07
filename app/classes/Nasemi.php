@@ -107,6 +107,15 @@
         }
     
         /**
+         * Método para crear un nuevo token de la sesión de usuario
+         * @return void
+         */
+        private function init_csrf()
+        {
+
+        }
+
+        /**
          * Método para el manejo de la URI, filtrar y descomponer elementos de la uri
          * 
          * @return void
