@@ -22,6 +22,7 @@
             $this->init_load_config();
             $this->init_load_functions();
             $this->init_autoload();
+            $this->init_csrf();
             $this->filter_url();
             $this->dispatch();
         }
@@ -112,7 +113,8 @@
          */
         private function init_csrf()
         {
-
+            $csrf = new Csrf();
+            print_r($_SESSION);
         }
 
         /**

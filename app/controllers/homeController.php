@@ -4,6 +4,25 @@
         }
 
         function index(){
+            $datos = 
+            [
+                'title' => 'NASEMI',
+                'bg' => 'dark'
+            ];
+            
+            View::render('nasemi', $datos);
+            die;
+            print_r($_SESSION);
+            $token_peticion = "91bf8f9e1396f629ffda85b60970c31a35d1d5b55f38ac22d690cd0de9600fcc";
+            if(Csrf::validate($token_peticion))
+            {
+                echo "EUREKA!";
+            }
+            else
+            {
+                die("fuchi");
+            }
+            die;
             //Actualizar un usuario
             try
             {
@@ -35,13 +54,6 @@
                 echo $e->getMessage();
             }
             die;
-            $datos = 
-            [
-                'title' => 'NASEMI',
-                'bg' => 'dark'
-            ];
-            
-            View::render('bee', $datos);
         }
 
         function flash()
